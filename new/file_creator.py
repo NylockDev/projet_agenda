@@ -29,7 +29,11 @@ class CreateFileSystem:
         
 
     def CreateUserDir(self,):
-        username=("_").join(self.nom)+("_"+self.classe)
+        
+        name_joined=self.nom.split()
+        name_joined=("_").join(name_joined)
+        
+        username=name_joined+"_"+self.classe
         self.Dir=self.ROOT/username
 
         if self.Dir.exists():
